@@ -1,0 +1,433 @@
+@{
+    ViewBag.Title = "FDM Coding Screen";
+}
+
+@model CARSWeb.Areas.CARS.ViewModels.PendInvoiceVM
+
+@section AreaMenu
+{
+    @Html.Partial("~/Areas/CARS/Views/_AreaMenu.cshtml")
+}
+
+<style>
+    /* Reduce modal header padding */
+    .modal-header {
+        padding: 10px 15px; /* Adjust padding to reduce white space */
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Vertically align title and close button */
+        color: white;
+    }
+
+    /* Adjust modal title font size and margin */
+    .modal-title {
+        font-size: 16px; /* Adjust title font size */
+        margin: 0; /* Remove extra margin */
+    }
+
+    /* Close button alignment and size */
+    .modal-header .close {
+        margin-left: auto; /* Push close button to the far right */
+        padding: 0; /* Reduce padding */
+        line-height: 1; /* Ensure it aligns well */
+        font-size: 20px;
+    }
+
+    /* Modal Body Styling */
+    .modal-body {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.0;
+    }
+
+    /* Button Styling */
+    .modal-footer .btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .modal-footer .btn-default {
+        padding: 5px 15px;
+    }
+
+    .modal-footer .btn-danger {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        padding: 5px 15px;
+    }
+
+        .modal-footer .btn-danger:hover {
+            background-color: #c9302c;
+            border-color: #ac2925;
+        }
+
+    /* Icon Styling */
+    .modal-title i {
+        margin-right: 10px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        if (@Model.PendInvoice.tglPendJEInvDOFs.Count == 0) {
+            document.getElementById("btnAddFDM").click();
+        }
+    }
+</script>
+
+
+<article>
+
+    @Html.Partial("_BasicInvoiceInfo", Model)
+
+    <!-- Error Summary -->
+    <div id="errorSummary" class="text-danger"></div>
+
+    @if (Model.PendInvoice.tglPendJEInvDOFs == null || Model.PendInvoice.tglPendJEInvDOFs.Count == 0)
+    {
+        <input type="button" class="btn-primary" id="btnAddFDM" value="Add New Line" />
+        <input type="button" class="btn-primary" id="btnImportFDM" value="Import Account Code Template File" onclick="location.href='@Url.Action("UploadFDM", "FDMCoding", new { invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey })'" />
+        <input type="button" class="btn-primary" id="btnSave" value="Save" />
+    }
+    else
+    {
+        //import from template
+        @if (@Model.PendInvoice.tglPendJEInvTCNDOFs != null && @Model.PendInvoice.tglPendJEInvTCNDOFs.Count > 0)
+        {
+            <input type="button" class="btn-primary" id="btnImportFDM" value="Import Account Code Template File" onclick="location.href='@Url.Action("UploadFDM", "FDMCoding", new { invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey })'" />
+            <input type="button" class="btn-primary" id="btnDeleteImportFDM" value="Delete Imported Account Code Lines" onclick="location.href='@Url.Action("DeleteImportedFDM", "FDMCoding", new { invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey })'" />
+        }
+        else
+        {
+            <input type="button" class="btn-primary" id="btnAddFDM" value="Add New Line" />
+            <input type="button" class="btn-primary" id="btnSave" value="Save" />
+        }
+    }
+
+    <br />
+    <div id="MainContent">
+
+        <table id="tblFDM" class="table-responsive table-bordered table-striped table-hover">
+            <thead id="tblheader">
+                <tr>
+                    <th hidden="hidden">JrlEntryPendID</th>
+                    <th>Line#</th>
+                    @foreach (var code in @Model.RequiredFDMCodingVMs.FirstOrDefault().FDMCodingDetails)
+                    {
+                        <th>@code.DisplayName</th>
+                    }
+                    @if (Model.PendInvoice.tglPendJEInvTCNDOFs == null || Model.PendInvoice.tglPendJEInvTCNDOFs.Count == 0)
+                    {
+                        <th>Action</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody id="tblBody">
+                @if (@Model.PendInvoice.tglPendJEInvDOFs != null && @Model.PendInvoice.tglPendJEInvDOFs.Count > 0)
+                {
+                    int lineNo = 1;
+
+                    //display records
+                    foreach (var je in @Model.RequiredFDMCodingVMs)
+                    {
+                        int i = 0;
+                        <tr>
+                            <td id="fdmID" hidden="hidden">@je.JrlEntryPendID</td>
+                            <td>@lineNo</td>
+
+                            @foreach (var code in je.FDMCodingDetails)
+                            {
+                                <td>@code.RealValue</td>
+
+                                i = i + 1;
+                            }
+
+                            @if (Model.PendInvoice.tglPendJEInvTCNDOFs == null || Model.PendInvoice.tglPendJEInvTCNDOFs.Count == 0)
+                            {
+                                <td>
+                                    <a href="@Url.Action("Edit", "FDMCoding", new { id = @je.JrlEntryPendID, invcKey=@Model.PendInvoice.tarPendInvoice.InvcKey })">Edit |</a>
+                                    @*                                     <a onclick="return confirm('Are you sure?')" href="@Url.Action("Delete", "FDMCoding", new { id = @je.JrlEntryPendID, invcKey=@Model.PendInvoice.tarPendInvoice.InvcKey })">Delete</a> *@
+                                    <a href="#"
+                                       class="text-danger removeLink"
+                                       data-id="@je.JrlEntryPendID"
+                                       data-href="@Url.Action("Delete", "FDMCoding", new { id = @je.JrlEntryPendID, invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey })">
+                                        Delete
+                                    </a>
+
+                                </td>
+                            }
+
+                        </tr>
+
+                        lineNo = lineNo + 1;
+                    }
+                }
+
+            </tbody>
+        </table>
+
+
+        <div id="divUpload" hidden="hidden">
+            <form method="post" asp-action="UploadFDM" asp-route-invcKey=@Model.PendInvoice.tarPendInvoice.InvcKey asp-controller="FDMCoding" asp-area="CARS" enctype="multipart/form-data">
+                <fieldset style="left:0">
+                    <legend> Upload FDM Excel File </legend>
+                    <input type="file" id="inpFDMFile" name="FDMFile" />
+                    <br />
+                    <input type="submit" id="btnUpload" value="Upload" />
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+    <br /><br />
+    <div id="divDone">
+        <input type="button" class="btn-success" id="btnIamDone" value="I am done with the FDM coding." />
+    </div>
+
+</article>
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog vertical-align-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Errors Encountered:</h5>
+            </div>
+            <div class="modal-body">
+                <div id="errorContainer" class="validationErrors"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header text-white" style="background-color: #d9534f;">
+                <h4 class="modal-title" id="deleteModalLabel">
+                    <i class="glyphicon glyphicon-warning-sign"></i> Confirm Deletion
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="modal-body text-center">
+                <p class="lead text-danger">
+                    <strong>Are you sure you want to delete this record?</strong>
+                </p>
+                <p>This action cannot be undone.</p>
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-default btn-default" data-dismiss="modal">
+                    <i class="glyphicon glyphicon-remove"></i> Cancel
+                </button>
+                <a href="#" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="glyphicon glyphicon-trash"></i> Delete
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //Add new FDM row
+            $("#btnAddFDM").click(function () {
+                console.log("btnAddFDM clicked");
+
+                var table = document.getElementById('tblFDM');
+                var rowcount = $('#tblFDM >tbody >tr').length; //exclude the header
+                var url = '@Html.Raw(@Url.Action("AddNewFDMRow", "FDMCoding", new { @custClassKey = @Model.PendInvoice.tarPendInvoice.CustClassKey, rows = "_param_" }))';
+                var newURL = url.replace("_param_", rowcount + 1);
+
+                $("#tblFDM").show();
+                $("#tblheader").show();
+
+                $("#divUpload").hide();
+
+                $.get(newURL, function (data) { $("#tblFDM").append(data); });
+            });
+
+
+            //Save FDM Coding
+            $("#btnSave").click(function () {
+                var TableData = []; //initialize array;
+                var table = document.getElementById('tblFDM');
+                var rowcount = $('#tblFDM >tbody >tr').length; //exclude the header row
+                var columncount = $("#tblFDM th").length;
+                var i = 0, cellValue = "", rowRecord = "", wholeRecord = "";
+
+                $("#tblFDM > tbody > tr").has('td').each(function (row, tr) {
+                    rowRecord = "";
+                    if ($(this).find('td:first').text() == 0) // only add the new rows
+                    {
+                        rowRecord = $(this).find('td:eq(1)').text().trim() + ";";
+                        for (i = 2, j = columncount - 1; i < j; ++i)  // exclude the fdmID, line# and action column
+                        {
+                            cellValue = $('td:eq(' + i + ') input', this).val();
+                            if (cellValue == undefined)
+                                cellValue = $('td:eq(' + i + ') select', this).val();
+
+                            rowRecord = rowRecord + cellValue + ";"
+                        }
+
+                        wholeRecord = wholeRecord + rowRecord.substring(0, rowRecord.length - 1) + "|";
+                    }
+                });
+
+                var url = '@Html.Raw(@Url.Action("SaveFDMCodings", "FDMCoding", new { tableRecords = "_param_", @invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey }))';
+
+                var newURL = url.replace('_param_', wholeRecord.substring(0, wholeRecord.length - 1));
+
+                $.get(newURL, function (data) {
+                    // confirm(data);
+                    if (data == "Record Save Succeeded.") {
+                        var myUrl = window.location.href;
+                        window.location.href = myUrl;
+                    }
+                    else {
+                        showErrorsInModal(data);
+                    }
+                })
+                    .fail(function () {
+                        showErrorsInModal('Error fetching data from server.');
+                    });
+            });
+
+            let trow; // Reference to the row for unsaved lines
+            let deleteUrl; // URL for the delete action
+
+            // Handle Delete link click
+            $(document).on("click", ".removeLink", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                // Get the closest row (for unsaved lines) or URL (for saved lines)
+                trow = $(this).closest("tr");
+                deleteUrl = $(this).data("href");
+
+                // Show the modal
+                $("#deleteModal").modal("show");
+            });
+
+            // Handle Confirm Delete button
+            $("#confirmDeleteBtn").on("click", function () {
+                if (deleteUrl) {
+                    // If the row is saved (has a delete URL), send an AJAX request
+                    $.ajax({
+                        url: deleteUrl,
+                        type: "POST",
+                        success: function (response) {
+                            console.log("Item deleted on the server.");
+
+                            if (response.redirectURL) { 
+                                window.location.href = response.redirectURL;
+                            }
+
+                            // Clear references and close modal
+                            trow = null;
+                            deleteUrl = null;
+                            $("#deleteModal").modal("hide");
+
+                            var rowCount = $('#tblFDM >tbody >tr').length;
+                            console.log("rowcount: " + rowCount);
+
+                            if (rowCount === 0) {
+                                console.log("Showing the btnImportFDM");
+                                $("#btnImportFDM").show();
+
+                                // Force reflow to ensure the UI updates
+                                document.body.offsetHeight;
+
+                                document.getElementById("btnAddFDM").click();
+                            }
+                        },
+                        error: function () {
+                            console.error("Failed to delete item on the server.");
+                        }
+                    });
+                }
+
+                // If the row is unsaved, remove it directly
+                if (trow && trow.length > 0) {
+                    trow.remove();
+                }
+            });
+
+            // Clear modal state on close
+            $("#deleteModal").on("hidden.bs.modal", function () {
+                trow = null;
+                deleteUrl = null;
+            });
+
+            function showErrorsInModal(result) {
+                // Clear previous content
+                $('#errorContainer').empty();
+
+                let formattedErrors = '';
+
+                // Pattern to validate "Line X:", "Line -X:", or "Summary Line:"
+                const linePattern = /^(Line -?\d+:|Summary Line:)/;
+
+                if (linePattern.test(result)) {
+                    // Split the error string by "Line" to isolate each line's errors
+                    const lines = result.split('|').map(line => line.trim()).filter(Boolean);
+
+                    lines.forEach(line => {
+                        if (line.trim() === '') return; // Skip empty lines
+
+                        // Split the line by the first ":"
+                        const lineParts = line.split(':');
+                        if (lineParts.length < 2) return;
+
+                        const lineNumber = lineParts[0].trim(); // Extract the line label (e.g., Line 1)
+
+                        const errors = lineParts[1].split(';').map(error => error.trim()).filter(error => error !== ''); // Extract and clean errors
+
+                        // Append errors for this line
+                        if (errors.length > 0) {
+                            formattedErrors += `<div><strong>${lineNumber}</strong><ul class="list-group">`;
+                            errors.forEach(error => {
+                                formattedErrors += `<li class="list-group-item list-group-item-danger">${error}</li>`;
+                            });
+
+                            formattedErrors += '</ul></div>';
+                        }
+                    });
+                }
+                else {
+                    formattedErrors = `<div>${result}</div>`;
+                }
+
+                // Populate the modal with formatted errors
+                $('#errorContainer').html(formattedErrors);
+
+                // Show the modal
+                $('#errorModal').modal('show');
+            }
+
+            $("#btnIamDone").click(function () {
+                var rowcount = $('#tblFDM >tbody >tr').length; //exclude the header
+                var url = '@Html.Raw(@Url.Action("CheckBeforeExit", "FDMCoding", new { rows = "_param_", @invcKey = @Model.PendInvoice.tarPendInvoice.InvcKey }))';
+                var newURL = url.replace("_param_", rowcount);
+
+                $.get(newURL, function (data) {
+                    if (data == "Verified") {
+                        var win = window.open("about:blank", "_self");
+                        win.close();
+                        this.window.close();
+                    }
+                    else
+                        confirm(data);
+                });
+            });
+        });
+
+    </script>
+}
