@@ -6,61 +6,70 @@
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <!-- Adding Glyphicon Icon -->
-                <h5 class="modal-title" id="errorModalLabel">
-                    <span class="glyphicon glyphicon-warning-sign"></span> Errors Encountered:
-                </h5>
+                <h4 class="modal-title" id="errorModalLabel">
+                    <span class="glyphicon glyphicon-warning-sign"></span> Errors Encountered
+                </h4>
             </div>
-            <div class="modal-body">
-                <div id="errorContainer" class="validationErrors"></div>
+            <div class="modal-body text-center">
+                <div id="errorContainer" class="validationErrors">
+                    <!-- Dynamically populate error messages here -->
+                    <p>No errors found.</p>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span> Close
+                </button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Custom CSS for Styling -->
+<!-- Custom CSS -->
 <style>
     .modal-header {
         background-color: #d9534f; /* Bootstrap danger color */
+        border-bottom: 1px solid #c9302c; /* Match the header color */
         color: white;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
+        padding: 15px;
     }
 
-    .modal-content {
-        border-radius: 6px;
+    .modal-title {
+        font-size: 18px;
+        margin: 0;
+        display: inline-block;
     }
 
-    .modal-footer .btn-danger {
-        background-color: #c9302c; /* Darker danger button color */
-        border-color: #ac2925;
+    .modal-body {
+        padding: 20px;
     }
 
-    .modal-footer .btn-danger:hover {
-        background-color: #ac2925;
-        border-color: #761c19;
+    .modal-footer {
+        border-top: 1px solid #ddd;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-default {
+        background-color: #f5f5f5;
+        border-color: #ccc;
+        color: #333;
+    }
+
+    .btn-default:hover {
+        background-color: #e6e6e6;
+        border-color: #adadad;
     }
 
     .validationErrors {
-        color: #d9534f; /* Danger color for error messages */
+        color: #d9534f; /* Bootstrap danger color for text */
         font-weight: bold;
         font-size: 14px;
     }
 
     .glyphicon-warning-sign {
         margin-right: 8px;
-        font-size: 18px; /* Slightly larger icon size */
-    }
-
-    .close {
-        color: white;
-        opacity: 0.8;
-    }
-
-    .close:hover {
-        opacity: 1;
+        font-size: 16px;
     }
 </style>
