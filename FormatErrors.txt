@@ -1,0 +1,59 @@
+// JavaScript to display file name
+const fileInput = document.getElementById('fileSelect');
+const fileNameDisplay = document.getElementById('fileName');
+
+fileInput.addEventListener('change', function () {
+    if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+        fileNameDisplay.textContent = 'No file selected';
+    }
+});
+
+// Retrieve the error message from ViewData
+const result = '@ViewData["UploadMessage"]';
+
+// Function to generate HTML from the error string
+function generateErrorHtml(result) {
+    let html = '';
+
+    // Pattern to validate "Line X:", "Line -X:", or "Summary Line:"
+    const linePattern = /^(Line -?\d+:|Summary Line:)/;
+
+    if (linePattern.test(result.trim()))
+    {
+        // Split the string by "|" to separate lines
+        // const lines = errorString.split('|').map(line => line.trim()).filter(Boolean);
+        const lines = result.split('|');
+
+        lines.forEach(line => {
+            if (line.trim() === '') return; // Skip empty lines
+
+            // Split the line by the first ":"
+            const lineParts = line.split(':');
+            if (lineParts.length < 2) return;
+
+            const lineNumber = lineParts[0].trim(); // Extract the line label (e.g., Line 1)
+            const errors = lineParts[1].split(';').map(error => error.trim()).filter(error => error !== ''); // Extract and clean errors
+
+            // Append errors for this line
+            if (errors.length > 0) {
+                html += `<div><strong>${lineNumber}</strong><ul class="list-group">`;
+                errors.forEach(error => {
+                    html += `<li class="list-group-item list-group-item-danger">${error}</li>`;
+                });
+
+                html += '</ul></div>';
+            }
+        });
+
+        return html;
+    }
+    else {
+        return `<div>${result}</div>`;;
+    }
+}
+
+// Generate and display the HTML
+const errorHtml = generateErrorHtml(result);
+document.getElementById('validationErrors').innerHTML = errorHtml;
