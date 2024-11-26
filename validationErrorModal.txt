@@ -1,0 +1,61 @@
+<!-- Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="errorModalLabel">Errors Encountered:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="errorContainer" class="validationErrors"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add some custom styling -->
+<style>
+    .modal-content {
+        border-radius: 8px; /* Rounded corners for a smoother look */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    }
+
+    .modal-header {
+        border-bottom: 2px solid #f1f1f1; /* Subtle bottom border for separation */
+    }
+
+    .modal-body {
+        font-size: 16px; /* Increase the font size for readability */
+        line-height: 1.5; /* Improve line spacing */
+    }
+
+    .validationErrors {
+        color: #d9534f; /* Red color for error messages */
+        font-weight: bold; /* Make error messages stand out */
+    }
+
+    .close {
+        font-size: 1.5rem; /* Larger close button */
+        color: #ffffff; /* Ensure close button is white */
+        opacity: 0.8;
+    }
+
+    .close:hover {
+        opacity: 1; /* Hover effect to enhance the close button */
+    }
+
+    .modal-footer .btn-danger {
+        background-color: #dc3545; /* Customize button color */
+        border-color: #dc3545;
+    }
+
+    .modal-footer .btn-danger:hover {
+        background-color: #c82333; /* Darker shade on hover */
+        border-color: #c82333;
+    }
+</style>
