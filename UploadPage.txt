@@ -1,0 +1,80 @@
+$(document).ready(function () {
+  
+});
+
+$(document).ready(function () {
+  // jQuery to display file name
+  const $fileInput = $('#fileSelect');
+  const $fileNameDisplay = $('#fileName');
+
+  $fileInput.on('change', function () {
+      if (this.files.length > 0) {
+          $fileNameDisplay.text(this.files[0].name);
+      } else {
+          $fileNameDisplay.text('No file selected');
+      }
+  });
+
+  // Retrieve the error message from ViewData
+  const result = '@ViewData["UploadMessage"]';
+
+  // Function to generate HTML from the error string
+  function generateErrorHtml(result) {
+      let html = '';
+
+      // Pattern to validate "Line X:", "Line -X:", or "Summary Line:"
+      const linePattern = /^(Line -?\d+:|Summary Line:)/;
+
+      if (linePattern.test($.trim(result))) {
+          // Split the string by "|" to separate lines
+          const lines = result.split('|');
+
+          $.each(lines, function (_, line) {
+              if ($.trim(line) === '') return; // Skip empty lines
+
+              // Split the line by the first ":"
+              const lineParts = line.split(':');
+              if (lineParts.length < 2) return;
+
+              const lineNumber = $.trim(lineParts[0]); // Extract the line label (e.g., Line 1)
+              const errors = lineParts[1]
+                  .split(';')
+                  .map(error => $.trim(error))
+                  .filter(error => error !== ''); // Extract and clean errors
+
+              // Append errors for this line
+              if (errors.length > 0) {
+                  html += `<div><strong>${lineNumber}</strong><ul class="list-group">`;
+                  $.each(errors, function (_, error) {
+                      html += `<li class="list-group-item list-group-item-danger">${error}</li>`;
+                  });
+
+                  html += '</ul></div>';
+              }
+          });
+
+          return html;
+      } else {
+          return `<div>${result}</div>`;
+      }
+  }
+
+  // Generate and display the HTML
+  const errorHtml = generateErrorHtml(result);
+  $('#validationErrors').html(errorHtml);
+
+
+  // Show the modal when the button is clicked
+  $('#fileUpload').on('click', function () {
+    $('#deleteModal').modal('show');
+  });
+
+  // Handle the delete confirmation
+  $('#confirmDelete').on('click', function () {
+    // Perform the delete action
+    console.log('Data deleted'); // Replace with your delete logic, e.g., AJAX call or form submission
+
+    // Hide the modal
+    $('#deleteModal').modal('hide');
+  });
+});
