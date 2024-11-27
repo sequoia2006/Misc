@@ -1,0 +1,191 @@
+@{
+    ViewBag.Title = "Upload FDM Coding";
+}
+
+<style>
+    .fileName {
+        margin-top: 10px;
+        font-size: 1.5rem;
+        color: #555;
+        background-color: yellow;
+    }
+    .label {
+        font-size: 24px;
+        vertical-align: middle;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+</style>
+
+@section AreaMenu
+{
+    @Html.Partial("~/Areas/CARS/Views/_AreaMenu.cshtml")
+}
+
+
+@Html.Partial("_BasicInvoiceInfo", @ViewData["VM"])
+
+
+@if (@ViewData["UploadMessage"] != null && @ViewData["UploadMessage"].ToString() != "")
+{
+    <div id="errorContainer" class="alert alert-danger">
+        <span class="h4">The following errors must be corrected before proceeding:</span>
+        <br />
+        <div id="validationErrors" class="validationErrors"></div>
+    </div>
+}
+
+<form id="uploadFileForm" method="post" asp-action="UploadFDM" asp-controller="FDMCoding" asp-area="CARS" asp-route-invcKey=@ViewData["InvcKey"] enctype="multipart/form-data" >
+    <fieldset style="left:0">
+        <legend> Upload Account Code Excel File </legend>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <label for="fileSelect" class="btn btn-primary btn-sm">
+                @* <i class="fa fa-file-excel-o"></i> Choose File *@
+                <span class="glyphicon glyphicon-folder-open"> Select File</span>
+            </label>
+        
+            <input type="file" id="fileSelect" style="display: none;" name="inpFDMFile" accept=".xlsx">
+            <div class="fileName" id="fileName" style="font-size: 1.3rem; color: #555">No file selected</div>
+        </div>
+        <br />
+
+        @if (@ViewData["ExistingFDMLines"].ToString() != "0")
+        {
+            <label for="fileUpload" class="btn btn-primary btn-sm">
+                @* <i class="fa fa-upload"></i> Import *@
+                <span class="glyphicon glyphicon-upload"> Import</span>
+            </label>
+            <input type="submit" id="fileUpload" style="display: none" onclick="return confirm('Would you like to delete the existing FDM coding lines and re-import?')" />
+        }
+        else
+        {
+            <label for="fileUpload" class="btn btn-primary btn-sm">
+                @* <i class="fa fa-upload"></i> Import *@
+                <span class="glyphicon glyphicon-upload"> Import</span>
+            </label>
+            <input type="submit" id="fileUpload" style="display: none" />
+        }
+    </fieldset>
+</form>
+
+<br />
+@Html.ActionLink("Back", "Index", "FDMCoding", new { area = "CARS", id = "CARS", invcKey = @ViewData["InvcKey"] }, null)
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header text-white" style="background-color: #d9534f;">
+                <h4 class="modal-title" id="deleteModalLabel">
+                    <i class="glyphicon glyphicon-warning-sign"></i> Confirm Deletion
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="modal-body text-center">
+                <p class="lead text-danger">
+                    <strong>Would you like to delete the existing FDM coding lines and re-import?</strong>
+                </p>
+                <p>This action cannot be undone.</p>
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-default btn-default" data-dismiss="modal">
+                    <i class="glyphicon glyphicon-remove"></i> Cancel
+                </button>
+                <a href="#" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="glyphicon glyphicon-trash"></i> Delete
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+   
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // jQuery to display file name
+        const $fileInput = $('#fileSelect');
+        const $fileNameDisplay = $('#fileName');
+
+        $fileInput.on('change', function () {
+            if (this.files.length > 0) {
+                $fileNameDisplay.text(this.files[0].name);
+            } else {
+                $fileNameDisplay.text('No file selected');
+            }
+        });
+
+        // Retrieve the error message from ViewData
+        const result = '@ViewData["UploadMessage"]';
+
+        // Function to generate HTML from the error string
+        function generateErrorHtml(result) {
+            let html = '';
+
+            // Pattern to validate "Line X:", "Line -X:", or "Summary Line:"
+            const linePattern = /^(Line -?\d+:|Summary Line:)/;
+
+            if (linePattern.test($.trim(result))) {
+                // Split the string by "|" to separate lines
+                const lines = result.split('|');
+
+                $.each(lines, function (_, line) {
+                    if ($.trim(line) === '') return; // Skip empty lines
+
+                    // Split the line by the first ":"
+                    const lineParts = line.split(':');
+                    if (lineParts.length < 2) return;
+
+                    const lineNumber = $.trim(lineParts[0]); // Extract the line label (e.g., Line 1)
+                    const errors = lineParts[1]
+                        .split(';')
+                        .map(error => $.trim(error))
+                        .filter(error => error !== ''); // Extract and clean errors
+
+                    // Append errors for this line
+                    if (errors.length > 0) {
+                        html += `<div><strong>${lineNumber}</strong><ul class="list-group">`;
+                        $.each(errors, function (_, error) {
+                            html += `<li class="list-group-item list-group-item-danger">${error}</li>`;
+                        });
+
+                        html += '</ul></div>';
+                    }
+                });
+
+                return html;
+            } 
+            else {
+                return `<div>${result}</div>`;
+            }
+        }
+
+        // Generate and display the HTML
+        const errorHtml = generateErrorHtml(result);
+        $('#validationErrors').html(errorHtml);
+
+        // Show the modal when the button is clicked
+        $('#fileUpload').on('click', function () {
+            $('#deleteModal').modal('show');
+        });
+
+        // Handle the delete confirmation
+        $('#confirmDeleteBtn').on('click', function () {
+            // Perform the delete action
+            console.log('Data deleted'); // Replace with your delete logic, e.g., AJAX call or form submission
+
+            // Hide the modal
+            $('#deleteModal').modal('hide');
+        });
+    });
+
+</script>
+
+
