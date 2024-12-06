@@ -1,155 +1,47 @@
-Sabel has contributed significantly to the agency's objectives this year through his work on the OneWA Remediation Project and by providing operational support to address service requests from business customers. His dedication to fulfilling his responsibilities and delivering results has been evident throughout the evaluation period.
+Sabel has made valuable contributions to the agency this year through his involvement in key projects, notably the OneWA Remediation Project, as well as his support for ongoing operations. His work has been integral to the success of these initiatives, and he has consistently demonstrated a reliable and professional approach to his responsibilities.
 
-Contributions to the OneWA Remediation Project:
-Sabel played an essential role in addressing the changes required by the Workday system as part of the OneWA Remediation Project. His key contributions included:
+Key Contributions:
+Sabel has played a significant role in the OneWA Remediation Project, helping the agency adapt its systems to meet the changes required by the Workday system. He has successfully contributed to database design and table updates, developed necessary remediation strategies for claims imports, and supported the web application setup and development to align with Workday requirements. Additionally, Sabel has worked on maintaining and improving the Telecom system’s online account features, ensuring that these systems were updated and functional to support the project’s objectives.
 
-Database and Table Design: Designed and reviewed table changes, including developing undo scripts, as part of adapting systems to meet Workday requirements. Conducted in-depth database analysis for Telecom and TollFree systems to ensure compatibility.
-Claims Import Remediation: Remediated MMIS claims import processes and provided design solutions to align with Workday-driven changes, ensuring seamless data handling.
-Web Application Development and Setup: Supported the setup of ERB/COR web applications across DEV/TEST/QA environments and contributed to TollFree web design, focusing on online account reporting and maintenance to meet Workday system requirements.
-Online Account Maintenance for Telecom: Designed and developed features for maintaining online accounts within the Telecom system, ensuring the integration of updates required for Workday compatibility.
-Code Reviews and Development: Conducted thorough reviews of scripts and SQL objects to ensure compliance with Workday integration needs.
-These contributions played a critical role in the agency’s efforts to adapt to the Workday system changes, ensuring systems were updated and functional to meet operational demands.
+His technical expertise and careful attention to detail have been key in ensuring that all updates and enhancements were completed in a timely manner, contributing to the overall success of the project.
 
-Operational Support and Service Requests:
-In addition to his project work, Sabel supported ongoing operations by addressing service requests from business customers. He worked diligently to:
+Support for Ongoing Operations:
+In addition to his project work, Sabel has effectively supported the day-to-day operations by handling service requests from business customers. His ability to resolve issues quickly and provide reliable technical solutions has helped maintain smooth operations across the team.
 
-Provide timely resolutions to requests, ensuring minimal disruption to business processes.
-Deliver reliable technical solutions that aligned with customer requirements.
-Maintain clear and professional communication with all stakeholders.
-Teamwork and Collaboration:
-Sabel has consistently demonstrated a collaborative approach to his work, ensuring open communication with team members and supervisors. His willingness to share knowledge and provide updates on his progress has contributed to a positive and efficient team environment.
+Sabel’s communication with stakeholders has been clear and consistent, ensuring that all requests are addressed professionally and promptly.
+
+Collaboration and Teamwork:
+Sabel’s collaborative approach to work has been a key asset to the team. He has consistently shared updates on his progress and worked well with others to achieve shared goals. His willingness to contribute to team discussions and share technical knowledge has strengthened team dynamics and supported the overall success of his colleagues.
 
 Overall Performance:
-Sabel’s performance this year has been steady and reliable. His contributions to the OneWA Remediation Project, specifically addressing Workday system changes, and his support for operational needs reflect his dedication to the agency’s mission and values.
+Sabel’s performance has been solid and dependable throughout the year. He has contributed effectively to critical projects, particularly the OneWA Remediation Project, and supported the ongoing operational needs of the agency. His professionalism, reliability, and technical skills have made a significant impact on the success of his team and the agency as a whole.
+Jude continues to distinguish himself as an exceptional technical leader, consistently demonstrating not only a broad skill set across systems but also an innate ability to address complex challenges with sophistication and efficiency. His performance this year has further reinforced his standing as an invaluable asset to our team, with contributions spanning multiple high-profile projects and initiatives.
 
-Jude’s technical skills are outstanding, and he is always willing and ready to learn new things and venture out of the
-standard comfort zone. He is very versatile in his technical expertise and excels in all components within a system,
-from UI to middle tier to database. Jude is highly productive and has completed numerous service requests,
-enhancements and bug fixes during this period of performance. Whenever called upon, whether it is to provide
-information about his systems on a short notice, attend meeting, Jude come through successfully.
-Jude is very efficient with his work time and others. He is often called upon to provide technical support and
-consultation, he has proven to be very timely in his response while maintaining a full load of activities. Jude works
-well with all types of personalities and has exhibited patience and understanding while focusing on the work that
-needs to be done and to assisting those who need to contribute to the team objectives.
-Jude demonstrated exceptional initiative and expertise when he willingly undertook the challenging OneWA task of
-devising strategies for AFRS to FDM data conversions. He exhibited outstanding problem-solving skills by not only
-finalizing a comprehensive strategy but also showcasing his commitment through the meticulous design and
-implementation of a versatile data conversion routine. This routine, which he developed, proved to be invaluable,
-offering seamless one-time conversions as well as on-the-fly lookup capabilities. Moreover, during the assignment,
-Jude showcased his adept leadership and collaboration skills. He conducted several highly productive brainstorming
-sessions that not only fostered a collaborative environment but also resulted in the generation of innovative ideas and
-approaches. His ability to facilitate engaging and effective discussions significantly contributed to the success of the
-project.
+As a key contributor to the OneWA Remediation Project, Jude played a central role in designing and implementing critical crosswalk stored procedures, enabling seamless data conversions between AFRS and Workday FDM values. His work on developing and refining the EIBs for Miscellaneous Payments, Supplier Invoices, and Accounting Journals exemplifies his technical acumen and his ability to drive forward solutions that integrate seamlessly with enterprise systems. His leadership in the development and deployment of these processes ensured that the system remained aligned with business needs while improving operational efficiency.
 
+Beyond his technical prowess, Jude’s proactive involvement in the Estate Recovery & Court Ordered Restitution (ERB-COR Web) project further highlights his versatility. His expertise in system architecture and database management was instrumental in supporting the HCA ODS migration, where he not only provided performance metrics but also ensured that connection information was updated across critical systems. His ability to navigate such large-scale migrations and implement necessary updates to database connections and SSIS environment variables showcases his deep understanding of both infrastructure and business processes.
 
+Jude’s contributions extend beyond specific projects to encompass operational continuity and system optimization. He consistently ensures the stability and efficiency of our core systems by addressing issues such as batch processing failures, AFRS invoice errors, and SSIS variable updates. His methodical approach to troubleshooting and resolving complex technical issues has significantly reduced downtime and improved system reliability.
 
-Jude has demonstrated in action and behavior that he believes strongly in teamwork. He cooperates and offers
-assistance to others when necessary or asked. He always keeps the group informed of the work he does. He shares
-information about his work and/or any great technical information pertaining to our work and technology being used
-here at TSD to team. He always follows through and finds the answers to any questions and report back to the
-requester promptly.
-Jude remains calm and collected at all times and pleasant to work with. He works well under pressure and handle
-stressful situations and crisis with ease and capable to coming up with solutions for problems and be able to get the
-issues resolved in a timely manner so that the customers can continue with their work as quickly as possible.
-Jude is always accessible to the customers and deals with their concerns and needs in a timely, courteous,
-responsive and professional manner. He maintains good relationship with our customers, his team as well as other
-teams within TSD such as IAU, AAU, PMO and Testing teams. Jude is an excellent worker and superb employee. I
-am pleased to have Jude on my team and enjoy working with him.
+Moreover, Jude's collaboration across cross-functional teams has been a key factor in the success of several initiatives. Whether working with business stakeholders, IT, or external partners, he remains committed to ensuring that solutions are not only technically sound but also aligned with business goals. His involvement in CARS and CTF projects, particularly in tasks such as Workday crosswalk updates and client expenditure transfer processes, has demonstrated his ability to synthesize technical requirements and deliver high-impact solutions.
 
-Estate Recovery & Court Ordered Restitution (ERB-COR web)
-Work with business to assist in One Washington research and analysis
-Continue working on ticket triage with business and troubleshooting complex technical issues that arise.
- 
-Manage user access to OFR & CARS reports on occasion.
- 
-Created System and DataFlow document for the ERB-COR system.
- 
-Updated SSIS environment variables in response to WinSCP migration.
- 
-HCA migrated the ODS/Medicaid data warehouse used by Estate Recovery from one cloud provider to another.
-I assisted with their proof of concept giving statistics on run times for datasets used in estate recovery.
-For the database move I had to update connection information to the database for the ERB-COR web application, SSRS reports used by ERB & COR.
- 
-Update and test new exclusion rules from ALTSA for Estate Recovery Exclusion.  This involves writing scripts to update tables and testing that new services are excluded via the applications exclusion logic.
- 
-Evaluate with business and update RAC code crosswalk for medicaid services.  Add new MAGI RAC codes to existing logic.
- 
-Respond to occasional failed batch processing jobs.
- 
-Update SSIS variables for ERB jobs because of WinSCP update
- 
-Work with business on occasion to help resolve AFRS errors found in invoices.
- 
-One Washington
-Move source code and set up build and release pipelines for web applications, SSIS batch processing and SQL Reports for ERB-COR, ERBCars, CTF and Telecom/Tollfree applications.
- 
-Copy applications to new web servers for ERB-COR, ERBCars, CTF and telecom/tollfree web applications.  These new web servers will be switched over to when OneWA goes live.
- 
-Add testers group to the ERB-COR, ERBCars, CTF and telecom/tollfree web applications for our OneWA testers to test changes that are being made.
- 
-Research and document user processes for creating toolbox files.
- 
-Design and develop a crosswalk stored procedure to look up Workday FDM values from AFRS values.  For one time conversion scripts and on the fly cross walking.  Create scripts to facilitate its use and assist others with using the new stored procedure.
- 
-Design and develop CTF AFRS toolbox to Miscellaneous Payment, Supplier Invoice and Accounting Journal Workday EIB's.  SSRS reports exported from the web application will create the EIB's for the users automatically for them to upload to Workday.
- 
-Design and develop changes to the CTF web application that will be required by Workday for the following processes:
-•	Manual Expenditures
-•	Transfer Client Expenditures
-•	Expenditure Reporting
-•	Disburse Client Funds
-•	Reversal and Prior Reversal
-•	Maintaining of Allocation Codes
-•	Maintaining of Allocation Code reimbursement percentages
-•	SSP Payment Maintenance
- 
-Refresh the CARS Workday Crosswalk database as new AFRS to FDM crosswalks are made available by OFM.
- 
-Design and develop updates for ODS stored procedures to pull FDM account coding for ERB-COR.
- 
- 
-Interim Assistance Reimbursement System (IARS)
-Created IARS dataflow diagram
-Updated IARS letters to dynamically display staff contact information depending on who is working the cases.
-Updated paths in config files for the web application to work with new paths created during file server replacement project.
-Answer questions and help staff as issues arise.
- 
- 
-Children's Trust Funds (CTF)
-Investigate issues with CTF automated jobs as they arise.  Some of the jobs import files and occasionally the files are not available at the time the job runs due to external factors.  I have to communicate with external partners to restore files and rerun jobs to keep  them things on track.
- 
-Work with DCYF IT to setup universal groups for DCYF staff to use applications without needing a 2nd DSHS user account to access the applications we host at DSHS.  The new universal groups were used for CTF web application, SSRS reporting and MODIS access.  Worked with DSHS DBA for the application's data access using these new groups.
- 
-Support CTF staff with various issues that come up with web application throughout the year.
- 
-Fix timeouts that were occurring causing the reimbursement screen not to load.
- 
-Fixed a leap year issue with the CTF Client Detail report that was preventing it from running.
- 
-Updated the CTF A19 AFRS toolbox report to remove a hidden column that users previously would have to manually remove from the exported report spreadsheet before uploading to AFRS each month.
- 
-Updated the CTF Client Account Ledger Report to include a date range that was requested to be displayed by Social Security.
- 
- 
- 
-Telecom/TollFree Web app and Automated Jobs
-Create and run scripts to correct AFRS coding for tollfree lines.  This is an annual state fiscal year end task.
-This work saves the business ~20 hours not having to manually enter information by using a script to make a sweeping change on the database affecting all tollfree lines.
- 
-Occasionally about 3 times throughout the year we had issues with Telecom files (files from WaTech used in the processing of payment of non toll free/regular telephone lines used by DSHS)  
-Update ETOC support site links on contact page 
- 
-Manually import monthly tollfree files from vendor and work with business to verify.  This manual process consumes about 4 hours each month and could be automated in the future.
- 
-Updated SSIS environment variables in response to changes to file paths made by WinSCP migration
- 
-Fix broken report links caused by changes made in the file server replacement project.
- 
-Work through bad data and issues found in the tollfree import files from vendor.
- 
-Work with business to add and remove tollfree numbers.
- 
+Jude’s mentoring of entry-level staff has also been exemplary. He consistently goes above and beyond to support and guide his colleagues, imparting technical knowledge and troubleshooting expertise. His willingness to share insights, offer timely assistance, and provide feedback creates an atmosphere of continuous learning and collaboration, strengthening the overall team dynamic.
 
+In conclusion, Jude’s performance this year has been nothing short of outstanding. He combines exceptional technical expertise with a collaborative and solution-oriented mindset, which has had a significant and positive impact on both our projects and the team as a whole. His ability to address high-level challenges, facilitate cross-team collaboration, and drive strategic initiatives forward makes him an indispensable member of our team. I am confident that Jude will continue to excel and make meaningful contributions to the success of the organization.
+ 
+Jude continues to distinguish himself as an exceptional technical leader, consistently demonstrating not only a broad skill set across systems but also an innate ability to address complex challenges with sophistication and efficiency. His performance this year has further reinforced his standing as an invaluable asset to our team, with contributions spanning multiple high-profile projects and initiatives.
+
+As a key contributor to the OneWA Remediation Project, Jude played a central role in designing and implementing critical crosswalk stored procedures, enabling seamless data conversions between AFRS and Workday FDM values. His work on developing and refining the EIBs for Miscellaneous Payments, Supplier Invoices, and Accounting Journals exemplifies his technical acumen and his ability to drive forward solutions that integrate seamlessly with enterprise systems. His leadership in the development and deployment of these processes ensured that the system remained aligned with business needs while improving operational efficiency.
+
+Beyond his technical prowess, Jude’s proactive involvement in the Estate Recovery & Court Ordered Restitution (ERB-COR Web) project further highlights his versatility. His expertise in system architecture and database management was instrumental in supporting the HCA ODS migration, where he not only provided performance metrics but also ensured that connection information was updated across critical systems. His ability to navigate such large-scale migrations and implement necessary updates to database connections and SSIS environment variables showcases his deep understanding of both infrastructure and business processes.
+
+Jude’s contributions extend beyond specific projects to encompass operational continuity and system optimization. He consistently ensures the stability and efficiency of our core systems by addressing issues such as batch processing failures, AFRS invoice errors, and SSIS variable updates. His methodical approach to troubleshooting and resolving complex technical issues has significantly reduced downtime and improved system reliability.
+
+Moreover, Jude's collaboration across cross-functional teams has been a key factor in the success of several initiatives. Whether working with business stakeholders, IT, or external partners, he remains committed to ensuring that solutions are not only technically sound but also aligned with business goals. His involvement in CARS and CTF projects, particularly in tasks such as Workday crosswalk updates and client expenditure transfer processes, has demonstrated his ability to synthesize technical requirements and deliver high-impact solutions.
+
+Jude’s mentoring of entry-level staff has also been exemplary. He consistently goes above and beyond to support and guide his colleagues, imparting technical knowledge and troubleshooting expertise. His willingness to share insights, offer timely assistance, and provide feedback creates an atmosphere of continuous learning and collaboration, strengthening the overall team dynamic.
+
+In conclusion, Jude’s performance this year has been nothing short of outstanding. He combines exceptional technical expertise with a collaborative and solution-oriented mindset, which has had a significant and positive impact on both our projects and the team as a whole. His ability to address high-level challenges, facilitate cross-team collaboration, and drive strategic initiatives forward makes him an indispensable member of our team. I am confident that Jude will continue to excel and make meaningful contributions to the success of the organization.
 
 MJ has consistently demonstrated her job knowledge and technical capability. She has completed the Automated
 Refund project and has made many enhancements and bug fixes to her responsible systems.
