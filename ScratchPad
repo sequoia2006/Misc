@@ -1,3 +1,5 @@
+SABEL
+
 Sabel has made valuable contributions to the agency this year through his involvement in key projects, notably the OneWA Remediation Project, as well as his support for ongoing operations. His work has been integral to the success of these initiatives, and he has consistently demonstrated a reliable and professional approach to his responsibilities.
 
 Key Contributions:
@@ -15,6 +17,10 @@ Sabel’s collaborative approach to work has been a key asset to the team. He ha
 
 Overall Performance:
 Sabel’s performance has been solid and dependable throughout the year. He has contributed effectively to critical projects, particularly the OneWA Remediation Project, and supported the ongoing operational needs of the agency. His professionalism, reliability, and technical skills have made a significant impact on the success of his team and the agency as a whole.
+
+
+
+JUDE
 Jude continues to distinguish himself as an exceptional technical leader, consistently demonstrating not only a broad skill set across systems but also an innate ability to address complex challenges with sophistication and efficiency. His performance this year has further reinforced his standing as an invaluable asset to our team, with contributions spanning multiple high-profile projects and initiatives.
 
 As a key contributor to the OneWA Remediation Project, Jude played a central role in designing and implementing critical crosswalk stored procedures, enabling seamless data conversions between AFRS and Workday FDM values. His work on developing and refining the EIBs for Miscellaneous Payments, Supplier Invoices, and Accounting Journals exemplifies his technical acumen and his ability to drive forward solutions that integrate seamlessly with enterprise systems. His leadership in the development and deployment of these processes ensured that the system remained aligned with business needs while improving operational efficiency.
@@ -43,39 +49,16 @@ Jude’s mentoring of entry-level staff has also been exemplary. He consistently
 
 In conclusion, Jude’s performance this year has been nothing short of outstanding. He combines exceptional technical expertise with a collaborative and solution-oriented mindset, which has had a significant and positive impact on both our projects and the team as a whole. His ability to address high-level challenges, facilitate cross-team collaboration, and drive strategic initiatives forward makes him an indispensable member of our team. I am confident that Jude will continue to excel and make meaningful contributions to the success of the organization.
 
-MJ has consistently demonstrated her job knowledge and technical capability. She has completed the Automated
-Refund project and has made many enhancements and bug fixes to her responsible systems.
-MJ’s written communication skill is great. She communicates thoughts, opinions and findings with others effectively
-in written form. MJ continues to make improvements on her oral communication skills as she is stepping into the lead
-developer role for her responsible systems that require her to clearly explain and communicate with business as well
-as technical personnel with different background, level and expertise.
-MJ continues to always be accessible to our customers and deals with their concerns and needs in a timely,
-courteous, responsive, and professional manner.
 
-1)	OneWA work – completing assigned tasks for Cash and other processes, including the work for database tables and stored procedures, SSIS packages, and applications
-	Database design changes - worked on documenting the design changes and developing the database scripts for 48 tables and related stored procedures
 
-	SSPS process 
-Design & implement the changes for DI-41 (ACES) and DI-51 (SSPS), work closely with the DMS team for the specs. Their new changes in requirements came up after all of the work was done and released to Test, which meant I would still need to circle back to make the changes accordingly
+MJ
+---
+MJ has had a productive year, making valuable contributions to various projects and ongoing responsibilities. She has consistently applied her technical skills and demonstrated her ability to adapt to changing requirements.
 
-	Design & implement the changes for the following processes for cash jobs
-a)	POne -190
-b)	DI-21, process for receiving transactions from DMS 
-c)	Report for SNA fees 
-d)	Reporting Finalization process
+Project Contributions: MJ has contributed significantly to the OneWA project, which involves adapting to changes in the Workday system, the replacement for the AFRS system. She completed tasks such as database design changes, SSIS package development, and application enhancements to align with the new system. She was also involved in the SSPS process and cash job processes, where she successfully designed and implemented changes. Her involvement in resolving the Excel issue for the SFYE job showed her problem-solving abilities and commitment to delivering results.
 
-	Other/Related
-a)	Database remediation and verifying, fixed any DBUp deployment issues that might have held up all others a few times  throughout the year.
-b)	Set up the app pool on DEV/TEST/QA  environment for ClickOnce deployment of Cash applications using the build/release pipelines.
-c)	Finally involved with the problem-solving work for the Excel issue for SFYE job that took other team a few months yet resolved, was able to achieve decisive results 
-d)	Train the new users for CARSApi and CARSWeb, walked through the fundamental concepts and shared work  knowledge to get them quickly started 
+Leadership and Initiative: In the TPS project, MJ led the work on TSD side changes, designing and developing processes while adapting to evolving requirements. She has demonstrated the ability to adjust her work approach to align with shifting priorities and has effectively managed these changes. Additionally, MJ took the initiative to train entry-level developers on CARSApi and CARSWeb, helping them understand fundamental concepts and quickly get up to speed.
 
-2)	TPS project
+Production Support and Dependability: MJ has consistently managed her primary duties and provided ongoing production support for critical systems, including Cash apps, SSPS, and CARS services. Her responsiveness and attention to detail have been instrumental in maintaining the stability and functionality of these systems.
 
-Taking the lead on working on TSD side changes for the TPS migration for DMS, designed and developed the process and work, as well as working around things that are changing and kept changing, having to constantly adapt and adjust the work approach. The work still can’t be done until this point due to the DMS side of work that our process depends on still not being finalized, we received the new requirements that is largely changed from the last known ones from a few months ago, so I will need to make changes accordingly
-
-3)	Staying on top of all of the primary duties and providing production support for the following:
-	Cash apps, including CAT, CRT, CI, and console applications
-	SSPS,  ESDM, ACH, and closely working with Rebecca for Cash jobs  (mainly the cash critical and non-critical jobs)
-	CARSApi web service and CARSWeb web front-end
-
+Overall, MJ's performance this year has been strong, and she has consistently demonstrated technical expertise and a commitment to delivering results. She remains a key contributor to the team's success and has effectively managed her responsibilities across various projects and tasks.
