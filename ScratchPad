@@ -1,44 +1,26 @@
-Sabel takes agency’s missions and values seriously and accountable for the work he is responsible for. He shows
-diligence to endorse the agency values with exemplary sense of responsibility to support the mission of the TSD and
-has met all key results and competencies in this evaluation period.
-Sabel is very consistent in demonstrating his job knowledge and technical capability. He has a solid technical and
-system development background and has demonstrated successful delivery of many projects and service requests
-for the systems he is responsible for. He is very versatile in his technical expertise and excels in all components
-within a system, from UI to middle tier to database. He does an excellent job of keeping himself updated about the
-current developments and technology trend and does not need supervision to fulfill his responsibilities. He provides
-guidance and directions with his valuable business and technical experience and expertise that have been the driving
-force for successful delivery of system solutions in a timely manner to meet customers’ needs.
-Sabel has a strong sense of teamwork and has demonstrated his eagerness to work with team members to make
-sure team will successfully produce great results. He always keeps his supervisor and teammates in the loop of the
-work he does. He shares information about his work and/or any great technical information pertaining to our work and
-technology being used here at TSD to team. He always follows through and finds the answers to any questions and
-report back to the requester promptly.
-Sabel provides mentorship and guidance to team members and encourages team unity through sharing information
-or expertise. He works well under pressure and handle stressful situations and crisis with ease and capable to
-coming up with solutions for problems and be able to get the issues resolved in a timely manner so that the
-customers can continue with their work as quickly as possible.
-Sabel is committed to providing the best customer experience and on the look for ways to make them happy in any
-way he can, whether making improvements to the systems or just simply being responsive to their needs. He always
-follows through and finds answers and reports back to the customers promptly. His customers are always thankful for
-his help and have complimented him on numerous occasions for his excellence customer service.
+Sabel has contributed significantly to the agency's objectives this year through his work on the OneWA Remediation Project and by providing operational support to address service requests from business customers. His dedication to fulfilling his responsibilities and delivering results has been evident throughout the evaluation period.
 
-Sprint 7:  Table changes design/review
-Sprint 8:  Undo script for COR/ERB
-Sprint 9:  Code review for table scripts in ERB/COR
-Sprint 10: MMIS claims import remediation, Design options for ERB/COR Claims Import
-Sprint 11: None
-Sprint 12: MMIS Design/Review
-Sprint 13: ERB/COR Web app setup on DEV/TEST/QA, ERBBARS setup 
-Sprint 14: Telecom DB table analysis, Changes to ERB/COR import process to add AllocationPool
-Sprint 15: Tollfree DB table analysis, design
-Sprint 16: Develop Diagram
-Sprint 17: Develop TollFree table changes
-Sprint 18: Code review for TollFree table changes, SQL objects
-Sprint 19: TollFree Web design - online account reports/maintenance - design review
-Sprint 20: None
-Sprint 21: Manage AFRS Account Coding Design review, develop Tollfree web - Online Account Report/maintenance
-Sprint 22: FINS_ID Account View/Edit/Create Details design/review
-Sprint 23: Develop FIN_IDs Account View/Edit/Create Details
+Contributions to the OneWA Remediation Project:
+Sabel played an essential role in addressing the changes required by the Workday system as part of the OneWA Remediation Project. His key contributions included:
+
+Database and Table Design: Designed and reviewed table changes, including developing undo scripts, as part of adapting systems to meet Workday requirements. Conducted in-depth database analysis for Telecom and TollFree systems to ensure compatibility.
+Claims Import Remediation: Remediated MMIS claims import processes and provided design solutions to align with Workday-driven changes, ensuring seamless data handling.
+Web Application Development and Setup: Supported the setup of ERB/COR web applications across DEV/TEST/QA environments and contributed to TollFree web design, focusing on online account reporting and maintenance to meet Workday system requirements.
+Online Account Maintenance for Telecom: Designed and developed features for maintaining online accounts within the Telecom system, ensuring the integration of updates required for Workday compatibility.
+Code Reviews and Development: Conducted thorough reviews of scripts and SQL objects to ensure compliance with Workday integration needs.
+These contributions played a critical role in the agency’s efforts to adapt to the Workday system changes, ensuring systems were updated and functional to meet operational demands.
+
+Operational Support and Service Requests:
+In addition to his project work, Sabel supported ongoing operations by addressing service requests from business customers. He worked diligently to:
+
+Provide timely resolutions to requests, ensuring minimal disruption to business processes.
+Deliver reliable technical solutions that aligned with customer requirements.
+Maintain clear and professional communication with all stakeholders.
+Teamwork and Collaboration:
+Sabel has consistently demonstrated a collaborative approach to his work, ensuring open communication with team members and supervisors. His willingness to share knowledge and provide updates on his progress has contributed to a positive and efficient team environment.
+
+Overall Performance:
+Sabel’s performance this year has been steady and reliable. His contributions to the OneWA Remediation Project, specifically addressing Workday system changes, and his support for operational needs reflect his dedication to the agency’s mission and values.
 
 Jude’s technical skills are outstanding, and he is always willing and ready to learn new things and venture out of the
 standard comfort zone. He is very versatile in his technical expertise and excels in all components within a system,
@@ -58,6 +40,9 @@ Jude showcased his adept leadership and collaboration skills. He conducted sever
 sessions that not only fostered a collaborative environment but also resulted in the generation of innovative ideas and
 approaches. His ability to facilitate engaging and effective discussions significantly contributed to the success of the
 project.
+
+
+
 Jude has demonstrated in action and behavior that he believes strongly in teamwork. He cooperates and offers
 assistance to others when necessary or asked. He always keeps the group informed of the work he does. He shares
 information about his work and/or any great technical information pertaining to our work and technology being used
