@@ -52,20 +52,30 @@ as technical personnel with different background, level and expertise.
 MJ continues to always be accessible to our customers and deals with their concerns and needs in a timely,
 courteous, responsive, and professional manner.
 
-Sprint 7:  Table changes design/review, develop table scripts
-Sprint 8:  Create table scripts for cash processing
-Sprint 9:  Code review for table scripts
-Sprint 10: Design for DI-41, develop changes
-Sprint 11: None
-Sprint 12: Design review for DI-41, design for DI-51 (SSPS Account Code), develop script changes for DI-51
-Sprint 13: Update design for DI-41/51, Upate design document for cash processing tables, add AllocationPool
-Sprint 14: Code review for SSIS package DI-51, CRT/CAT - build and release, setup web app/pool for CRT/CAT deployment, design for CM4130 POne Int019
-Sprint 15: Deploy changes for DI-41, design for CM4050 
-Sprint 16: Deploy POne-Int19
-Sprint 17: Design generate reports for OAS cash unit
-Sprint 18: Deploy to Test, deploy Generate report for SNA fees, attend LSR testing sessions
-Sprint 19: Setup/deploy changes for DI-21 
-Sprint 20: Something replacement project
-Sprint 21: Design Workday Reporting finalization
-Sprint 22: Release WD report finalization
-Sprint 23: TPS Implementation
+1)	OneWA work – completing assigned tasks for Cash and other processes, including the work for database tables and stored procedures, SSIS packages, and applications
+	Database design changes - worked on documenting the design changes and developing the database scripts for 48 tables and related stored procedures
+
+	SSPS process 
+Design & implement the changes for DI-41 (ACES) and DI-51 (SSPS), work closely with the DMS team for the specs. Their new changes in requirements came up after all of the work was done and released to Test, which meant I would still need to circle back to make the changes accordingly
+
+	Design & implement the changes for the following processes for cash jobs
+a)	POne -190
+b)	DI-21, process for receiving transactions from DMS 
+c)	Report for SNA fees 
+d)	Reporting Finalization process
+
+	Other/Related
+a)	Database remediation and verifying, fixed any DBUp deployment issues that might have held up all others a few times  throughout the year.
+b)	Set up the app pool on DEV/TEST/QA  environment for ClickOnce deployment of Cash applications using the build/release pipelines.
+c)	Finally involved with the problem-solving work for the Excel issue for SFYE job that took other team a few months yet resolved, was able to achieve decisive results 
+d)	Train the new users for CARSApi and CARSWeb, walked through the fundamental concepts and shared work  knowledge to get them quickly started 
+
+2)	TPS project
+
+Taking the lead on working on TSD side changes for the TPS migration for DMS, designed and developed the process and work, as well as working around things that are changing and kept changing, having to constantly adapt and adjust the work approach. The work still can’t be done until this point due to the DMS side of work that our process depends on still not being finalized, we received the new requirements that is largely changed from the last known ones from a few months ago, so I will need to make changes accordingly
+
+3)	Staying on top of all of the primary duties and providing production support for the following:
+	Cash apps, including CAT, CRT, CI, and console applications
+	SSPS,  ESDM, ACH, and closely working with Rebecca for Cash jobs  (mainly the cash critical and non-critical jobs)
+	CARSApi web service and CARSWeb web front-end
+
