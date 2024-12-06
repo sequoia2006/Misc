@@ -56,24 +56,99 @@ responsive and professional manner. He maintains good relationship with our cust
 teams within TSD such as IAU, AAU, PMO and Testing teams. Jude is an excellent worker and superb employee. I
 am pleased to have Jude on my team and enjoy working with him.
 
-Sprint 6:  Table changes design/review
-Sprint 7:  Document chosen Xwalk method in detail, develop scripts for table changes
-Sprint 8:  None
-Sprint 9:  Code review for table scripts, Meeting with HCA to deal with ODS
-Sprint 10: Develop XWalk stored procedure, code review, document objects for MMIS claim import, SSPS claim import
-Sprint 11: Promote XWalk code and DB to TEST
-Sprint 12: Update ODS stored procedure and unit test.
-Sprint 13: Create build/release for ERB-COR, ERBCARS, CTF, changes to XWalk process.
-Sprint 14: Set up CTF web, update ERB-COR web
-Sprint 15: Learn EIB process
-Sprint 16: CTF A19 Disbursement EIB design
-Sprint 17: Develop supplier Invoice, MiscPayment EIB
-Sprint 18: Modify CTF to email the 2 EIB reports to business
-Sprint 19: Design/develop Accounting Journal EIB, Add link to CTF to run the Accounting Journal EIB report
-Sprint 20: Design doc/review/develop
-Sprint 21: CTF - Design process to transfer client expenditures, develop
-Sprint 22: Code review, bug fixes, design create manual expenditures/review
-Sprint 23: CTF - Design/develop changes to the Maintain allocation codes and percentages processes.
+Estate Recovery & Court Ordered Restitution (ERB-COR web)
+Work with business to assist in One Washington research and analysis
+Continue working on ticket triage with business and troubleshooting complex technical issues that arise.
+ 
+Manage user access to OFR & CARS reports on occasion.
+ 
+Created System and DataFlow document for the ERB-COR system.
+ 
+Updated SSIS environment variables in response to WinSCP migration.
+ 
+HCA migrated the ODS/Medicaid data warehouse used by Estate Recovery from one cloud provider to another.
+I assisted with their proof of concept giving statistics on run times for datasets used in estate recovery.
+For the database move I had to update connection information to the database for the ERB-COR web application, SSRS reports used by ERB & COR.
+ 
+Update and test new exclusion rules from ALTSA for Estate Recovery Exclusion.  This involves writing scripts to update tables and testing that new services are excluded via the applications exclusion logic.
+ 
+Evaluate with business and update RAC code crosswalk for medicaid services.  Add new MAGI RAC codes to existing logic.
+ 
+Respond to occasional failed batch processing jobs.
+ 
+Update SSIS variables for ERB jobs because of WinSCP update
+ 
+Work with business on occasion to help resolve AFRS errors found in invoices.
+ 
+One Washington
+Move source code and set up build and release pipelines for web applications, SSIS batch processing and SQL Reports for ERB-COR, ERBCars, CTF and Telecom/Tollfree applications.
+ 
+Copy applications to new web servers for ERB-COR, ERBCars, CTF and telecom/tollfree web applications.  These new web servers will be switched over to when OneWA goes live.
+ 
+Add testers group to the ERB-COR, ERBCars, CTF and telecom/tollfree web applications for our OneWA testers to test changes that are being made.
+ 
+Research and document user processes for creating toolbox files.
+ 
+Design and develop a crosswalk stored procedure to look up Workday FDM values from AFRS values.  For one time conversion scripts and on the fly cross walking.  Create scripts to facilitate its use and assist others with using the new stored procedure.
+ 
+Design and develop CTF AFRS toolbox to Miscellaneous Payment, Supplier Invoice and Accounting Journal Workday EIB's.  SSRS reports exported from the web application will create the EIB's for the users automatically for them to upload to Workday.
+ 
+Design and develop changes to the CTF web application that will be required by Workday for the following processes:
+•	Manual Expenditures
+•	Transfer Client Expenditures
+•	Expenditure Reporting
+•	Disburse Client Funds
+•	Reversal and Prior Reversal
+•	Maintaining of Allocation Codes
+•	Maintaining of Allocation Code reimbursement percentages
+•	SSP Payment Maintenance
+ 
+Refresh the CARS Workday Crosswalk database as new AFRS to FDM crosswalks are made available by OFM.
+ 
+Design and develop updates for ODS stored procedures to pull FDM account coding for ERB-COR.
+ 
+ 
+Interim Assistance Reimbursement System (IARS)
+Created IARS dataflow diagram
+Updated IARS letters to dynamically display staff contact information depending on who is working the cases.
+Updated paths in config files for the web application to work with new paths created during file server replacement project.
+Answer questions and help staff as issues arise.
+ 
+ 
+Children's Trust Funds (CTF)
+Investigate issues with CTF automated jobs as they arise.  Some of the jobs import files and occasionally the files are not available at the time the job runs due to external factors.  I have to communicate with external partners to restore files and rerun jobs to keep  them things on track.
+ 
+Work with DCYF IT to setup universal groups for DCYF staff to use applications without needing a 2nd DSHS user account to access the applications we host at DSHS.  The new universal groups were used for CTF web application, SSRS reporting and MODIS access.  Worked with DSHS DBA for the application's data access using these new groups.
+ 
+Support CTF staff with various issues that come up with web application throughout the year.
+ 
+Fix timeouts that were occurring causing the reimbursement screen not to load.
+ 
+Fixed a leap year issue with the CTF Client Detail report that was preventing it from running.
+ 
+Updated the CTF A19 AFRS toolbox report to remove a hidden column that users previously would have to manually remove from the exported report spreadsheet before uploading to AFRS each month.
+ 
+Updated the CTF Client Account Ledger Report to include a date range that was requested to be displayed by Social Security.
+ 
+ 
+ 
+Telecom/TollFree Web app and Automated Jobs
+Create and run scripts to correct AFRS coding for tollfree lines.  This is an annual state fiscal year end task.
+This work saves the business ~20 hours not having to manually enter information by using a script to make a sweeping change on the database affecting all tollfree lines.
+ 
+Occasionally about 3 times throughout the year we had issues with Telecom files (files from WaTech used in the processing of payment of non toll free/regular telephone lines used by DSHS)  
+Update ETOC support site links on contact page 
+ 
+Manually import monthly tollfree files from vendor and work with business to verify.  This manual process consumes about 4 hours each month and could be automated in the future.
+ 
+Updated SSIS environment variables in response to changes to file paths made by WinSCP migration
+ 
+Fix broken report links caused by changes made in the file server replacement project.
+ 
+Work through bad data and issues found in the tollfree import files from vendor.
+ 
+Work with business to add and remove tollfree numbers.
+ 
 
 
 MJ has consistently demonstrated her job knowledge and technical capability. She has completed the Automated
