@@ -1,4 +1,67 @@
-Add the following tables to hold the data from the archive tables for correction by users:  
-tglWDAccountingJournalCorrectionDOF, tglWDAdhocBankTransCorrectionDOF, tglWDMiscPaymentCorrectionDOF, tglWDSupplierInvoiceCorrectionDOF.
-These 4 tables will have similar structure to their counterparts tglWDAccountingJournalStagingDOF, tglWDAdhocBankTransStagingDOF, tglWDMiscPaymentStagingDOF and tglWDSupplierInvoiceStagingDOF respectively.
-However, there will be 4 new columns added to each of the staging tables:  ArchiveId, IsCorrected, BatchId, StagingTransferredDate.  The foreign key ArchiveId which references the Id column from the archive table will be added to keep track of items that come from the archive table.  The IsCorrected flag will be used to indicate whether the transaction which may span multiple lines has been corrected and ready to be sent back to Workday.  The BatchId is a foreign key that references the Id primary key in the tglWDBatchLogDOF.  The StagingTransferredDate is the date and time when the transaction has been cloned to the staging table for a resubmission to Workday.  The figure below shows the new tglWDAccountingJournalCorrectionDOF table, the added columns and the relationship with the tglWDAccountingJournalArchiveDOF and tglWDBatchLogDOF tables.
+    public static void PDFSplitImages(string PDFInputFile, string PDFOutputFolder)
+    {
+      if (Directory.Exists(PDFOutputFolder))
+        Directory.Delete(PDFOutputFolder, true);
+      Directory.CreateDirectory(PDFOutputFolder);
+      //Dim bookmarks()
+      string title, start_page, dest_page;
+      PDFlib opdf = new PDFlib();
+      //opdf.set_option("license=" + GlobalFunct.GetLicenseKey());
+      opdf.set_parameter("license", GlobalFunct.GetLicenseKey());
+      int doc = opdf.open_pdi_document(PDFInputFile, "");
+      if (doc == -1)
+      {
+        throw new Exception(PDFInputFile + " doesn't exist");
+      }
+      int x = (int)opdf.pcos_get_number(doc, "length:bookmarks");
+      start_page = "1";
+      string[,] bookmarks = new string[x, 3];
+      if (x > 1)
+      {
+        bookmarks[0, 0] = start_page;
+        bookmarks[0, 1] = opdf.pcos_get_string(doc, "bookmarks[0]/Title");
+        bookmarks[0, 2] = (opdf.pcos_get_number(doc, "bookmarks[1]/destpage") - 1).ToString();
+        for (int i = 1; i < x - 1; i++)
+        {
+          start_page = opdf.pcos_get_number(doc, "bookmarks[" + i.ToString() + "]/destpage").ToString();
+          dest_page = (opdf.pcos_get_number(doc, "bookmarks[" + (i + 1).ToString() + "]/destpage") - 1).ToString();
+          title = opdf.pcos_get_string(doc, "bookmarks[" + i.ToString() + "]/Title");
+
+          bookmarks[i, 0] = start_page;
+          bookmarks[i, 1] = title;
+          bookmarks[i, 2] = dest_page;
+        }
+      }
+      start_page = opdf.pcos_get_number(doc, "bookmarks[" + (x - 1).ToString() + "]/destpage").ToString();
+      dest_page = opdf.pcos_get_number(doc, "length:pages").ToString();
+      title = opdf.pcos_get_string(doc, "bookmarks[" + (x - 1).ToString() + "]/Title");
+
+      bookmarks[x - 1, 0] = start_page;
+      bookmarks[x - 1, 1] = title;
+      bookmarks[x - 1, 2] = dest_page;
+
+      int ret, page;
+      // 2. Extract pages from PDF
+      for (int i = 0; i < x; i++)
+      {
+        //msgbox "start: " & bookmarks(i,0) & "  end: " & bookmarks(i,2)
+        ret = opdf.begin_document(PDFOutputFolder + @"\" + bookmarks[i, 1] + ".pdf", "compatibility=1.4");
+        if (ret == -1)
+        {
+          throw new Exception(opdf.get_errmsg());
+        }
+        else
+        {
+          for (int y = int.Parse(bookmarks[i, 0]); y <= int.Parse(bookmarks[i, 2]); y++)
+          {
+            page = opdf.open_pdi_page(doc, y, "");
+            opdf.begin_page_ext(10, 10, "");
+            opdf.fit_pdi_page(page, 0, 0, "adjustpage");
+            opdf.close_pdi_page(page);
+            opdf.end_page_ext("");
+          }
+        }
+        opdf.end_document("");
+      }
+      opdf.close_pdi_document(doc);
+    }
