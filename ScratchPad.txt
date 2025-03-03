@@ -1,67 +1,9 @@
-    public static void PDFSplitImages(string PDFInputFile, string PDFOutputFolder)
-    {
-      if (Directory.Exists(PDFOutputFolder))
-        Directory.Delete(PDFOutputFolder, true);
-      Directory.CreateDirectory(PDFOutputFolder);
-      //Dim bookmarks()
-      string title, start_page, dest_page;
-      PDFlib opdf = new PDFlib();
-      //opdf.set_option("license=" + GlobalFunct.GetLicenseKey());
-      opdf.set_parameter("license", GlobalFunct.GetLicenseKey());
-      int doc = opdf.open_pdi_document(PDFInputFile, "");
-      if (doc == -1)
-      {
-        throw new Exception(PDFInputFile + " doesn't exist");
-      }
-      int x = (int)opdf.pcos_get_number(doc, "length:bookmarks");
-      start_page = "1";
-      string[,] bookmarks = new string[x, 3];
-      if (x > 1)
-      {
-        bookmarks[0, 0] = start_page;
-        bookmarks[0, 1] = opdf.pcos_get_string(doc, "bookmarks[0]/Title");
-        bookmarks[0, 2] = (opdf.pcos_get_number(doc, "bookmarks[1]/destpage") - 1).ToString();
-        for (int i = 1; i < x - 1; i++)
-        {
-          start_page = opdf.pcos_get_number(doc, "bookmarks[" + i.ToString() + "]/destpage").ToString();
-          dest_page = (opdf.pcos_get_number(doc, "bookmarks[" + (i + 1).ToString() + "]/destpage") - 1).ToString();
-          title = opdf.pcos_get_string(doc, "bookmarks[" + i.ToString() + "]/Title");
-
-          bookmarks[i, 0] = start_page;
-          bookmarks[i, 1] = title;
-          bookmarks[i, 2] = dest_page;
-        }
-      }
-      start_page = opdf.pcos_get_number(doc, "bookmarks[" + (x - 1).ToString() + "]/destpage").ToString();
-      dest_page = opdf.pcos_get_number(doc, "length:pages").ToString();
-      title = opdf.pcos_get_string(doc, "bookmarks[" + (x - 1).ToString() + "]/Title");
-
-      bookmarks[x - 1, 0] = start_page;
-      bookmarks[x - 1, 1] = title;
-      bookmarks[x - 1, 2] = dest_page;
-
-      int ret, page;
-      // 2. Extract pages from PDF
-      for (int i = 0; i < x; i++)
-      {
-        //msgbox "start: " & bookmarks(i,0) & "  end: " & bookmarks(i,2)
-        ret = opdf.begin_document(PDFOutputFolder + @"\" + bookmarks[i, 1] + ".pdf", "compatibility=1.4");
-        if (ret == -1)
-        {
-          throw new Exception(opdf.get_errmsg());
-        }
-        else
-        {
-          for (int y = int.Parse(bookmarks[i, 0]); y <= int.Parse(bookmarks[i, 2]); y++)
-          {
-            page = opdf.open_pdi_page(doc, y, "");
-            opdf.begin_page_ext(10, 10, "");
-            opdf.fit_pdi_page(page, 0, 0, "adjustpage");
-            opdf.close_pdi_page(page);
-            opdf.end_page_ext("");
-          }
-        }
-        opdf.end_document("");
-      }
-      opdf.close_pdi_document(doc);
-    }
+The purpose of this communication is to ensure you are aware of how your actions are negatively affecting team morale. We are a team, and collaboration is essential for our success.
+To move forward and achieve our goals together, we need you to improve how you conduct yourself.
+You have openly expressed your thoughts in a manner that is disrespectful, rude, and unprofessional.  On February 12th, 2025, Elizabeth, junior developer, mistakenly took control of a support ticket and had the failed job restarted without notifying you.  She apologized for her mistake.  However, in the email addressed to me, you stated that “… I think we worked together well and got everything under control before you and the new team”.  In another email on February 13th, 2025, you said “… I felt that we seemed to be getting more issues after the team’s expansion”.
+•	When the junior developers make mistakes, you spend excessive time criticizing them, making them feel discouraged. 
+•	As a senior developer, you should be mentoring and guiding new hires, especially entry-level developers. However, instead of providing support, you often criticize their abilities.
+•	Other team members have also observed these behaviors and shared concerns about their impact on teamwork.
+You have not been supportive and have disregarded my role as your supervisor.  On January 28th, 2025, you have responded “You don’t have to give an ‘order’…” to my email asking you kindly to look at the failure of one of your daily jobs.
+•	You have spoken down to other team members while consistently praising a former employee who is no longer with the unit, seemingly to undermine our contributions.
+•	Some team members, including myself, are hesitant to work with you or provide feedback, as you tend to respond defensively by accusing others rather than accepting constructive criticism.
