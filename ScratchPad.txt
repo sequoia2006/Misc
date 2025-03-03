@@ -1,9 +1,20 @@
-The purpose of this communication is to ensure you are aware of how your actions are negatively affecting team morale. We are a team, and collaboration is essential for our success.
-To move forward and achieve our goals together, we need you to improve how you conduct yourself.
-You have openly expressed your thoughts in a manner that is disrespectful, rude, and unprofessional.  On February 12th, 2025, Elizabeth, junior developer, mistakenly took control of a support ticket and had the failed job restarted without notifying you.  She apologized for her mistake.  However, in the email addressed to me, you stated that “… I think we worked together well and got everything under control before you and the new team”.  In another email on February 13th, 2025, you said “… I felt that we seemed to be getting more issues after the team’s expansion”.
-•	When the junior developers make mistakes, you spend excessive time criticizing them, making them feel discouraged. 
-•	As a senior developer, you should be mentoring and guiding new hires, especially entry-level developers. However, instead of providing support, you often criticize their abilities.
-•	Other team members have also observed these behaviors and shared concerns about their impact on teamwork.
-You have not been supportive and have disregarded my role as your supervisor.  On January 28th, 2025, you have responded “You don’t have to give an ‘order’…” to my email asking you kindly to look at the failure of one of your daily jobs.
-•	You have spoken down to other team members while consistently praising a former employee who is no longer with the unit, seemingly to undermine our contributions.
-•	Some team members, including myself, are hesitant to work with you or provide feedback, as you tend to respond defensively by accusing others rather than accepting constructive criticism.
+<div id="modal" aria-hidden="true">
+    <button id="closeBtn">Close</button>
+</div>
+<button id="openBtn">Open Modal</button>
+
+<script>
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('openBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    openBtn.addEventListener('click', () => {
+        modal.setAttribute('aria-hidden', 'false');
+        closeBtn.focus(); // Move focus inside modal
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.setAttribute('aria-hidden', 'true');
+        openBtn.focus(); // Move focus back
+    });
+</script>
